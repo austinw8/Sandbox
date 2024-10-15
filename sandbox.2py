@@ -1,0 +1,64 @@
+# Write your code here.
+
+# You'll have to use the following strings:
+# 1) "How old are you? "
+# 2) "You can't ride the roller coaster."
+# 3) "You can ride the roller coaster!"
+
+
+lang = input("What's your favorite programming language? ")
+
+if lang == "Python":
+    print("Nice choice!")
+elif lang == "Golang":
+    print("You're a cool kid I see...")
+elif lang == "JavaScript":
+    print("Okay Mr. web developer.")
+else:
+    print("I don't know that language.")
+
+#example
+def calc_area_rect(length, width):
+    area = length * width
+    print(area)
+
+calc_area_rect(5, 3)
+calc_area_rect(15, 2)
+
+#withdraw money function
+def withdraw_money(amount):
+    balance = 1000
+    current_balance = balance - amount
+    return current_balance
+
+print("After your withdrawal, you have $" + str(withdraw_money(900)) + " remaining.")
+
+
+#basic loop
+i = 0
+for i in range(10):
+    print("This is loop " + str(i))
+
+i = 0
+while i <= 10: 
+    print("This is loop " + str(i))
+    i = i + 1
+
+i = 10
+while i >= 0: 
+    print("This is loop " + str(i))
+    i = i - 1
+
+#python modules (aka package)
+import time 
+time.sleep(5)
+print("Hello World")
+
+import random
+print(random.randint(0, 10))
+
+import area_of_shapes as shapes
+shapes.calc_area_tri(10, 10)
+
+
+#lists and dictionaries

@@ -1,0 +1,51 @@
+print("Rise and Shine!")
+
+# HTML and Inspecting a Web Page
+# https://www.scrapethissite.com/
+
+
+# BeautifulSoup and Requests
+from bs4 import BeautifulSoup
+import requests
+
+url = "https://www.scrapethissite.com/pages/forms/"
+page = requests.get(url)
+soup = BeautifulSoup(page.text, "html")
+print(soup.prettify())
+
+
+# Find and Find_all
+soup.find("div")
+soup.find_all("div", class_ = "col-md-12")
+soup.find_all("p", class_ = "lead")
+soup.find("p", class_ = "lead").text.strip()
+soup.find("th").text.strip()
+
+
+# Scraping Data from a Real Website + Pandas
+url = "https://en.wikipedia.org/wiki/List_of_largest_companies_in_the_United_States_by_revenue"
+page = requests.get(url)
+soup = BeautifulSoup(page.text, "html")
+print(soup.prettify())
+
+table = soup.find_all("table")[0]
+print(table)
+
+world_titles = table.find_all("th")
+world_table_titles = [title.text.strip() for title in world_titles]
+print(world_table_titles)
+
+import pandas as pd
+df = pd.DataFrame(columns = world_table_titles)
+df
+
+column_data = table.find_all("tr")
+
+for row in column_data[1:]:
+    row_data = row.find_all("td")
+    individual_row_data = [data.text.strip() for data in row_data]
+
+    length = len(df)
+    df.loc[length] = individual_row_data
+
+df

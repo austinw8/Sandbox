@@ -3,7 +3,7 @@ function checkPalindrome() {
     let result = document.getElementById("result");
 
     if (input === "") {
-        alert("⚠️ Please input a value ⚠️");
+        result.innerText = `⚠️ Please input a value ⚠️`;
     } else {
         let inputCleaned = input.toLowerCase().replace(/[^a-z0-9]/g, "");
         const inputReversed = inputCleaned.split("").reverse().join("");

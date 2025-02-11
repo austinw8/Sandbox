@@ -1,0 +1,107 @@
+---
+title: "CodeLit Book Sales"
+author: "Austin Mangelson"
+format: html
+editor: visual
+---
+
+## Background
+
+I've been hired as a data analyst for a company that sells books for learning programming. The company has produced multiple books, and each has received many reviews but wants you to check out the sales data and see if any useful information can be extracted from it.
+
+```{r}
+library(tidyverse)
+library(stringr)
+
+book_reviews <- read_csv("C:/Users/austi/Downloads/book_reviews.csv")
+str(book_reviews)
+```
+
+```{r}
+book_reviews |> 
+  count(book) |> 
+  arrange(desc(n))
+
+book_reviews |> 
+  count(review) |> 
+  arrange(desc(n))
+
+book_reviews |> 
+  count(state) |> 
+  arrange(desc(n))
+```
+
+206 rows have missing reviews. We will leave these in when doing any analysis apart from analysing the reviews, in which case we will filter those NA's out.
+
+Data Cleaning
+
+```{r}
+
+book_reviews <- book_reviews |> 
+  mutate(state = case_when(
+    state == "CA" ~ "California",
+    state == "NY" ~ "New York",
+    state == "FL" ~ "Florida",
+    state == "TX" ~ "Texas",
+    TRUE ~ state
+  )) |> 
+  mutate(review_num = case_when(
+    review == "Poor" ~ 1,
+    review == "Fair" ~ 2,
+    review == "Good" ~ 3,
+    review == "Great" ~ 4,
+    review == "Excellent" ~ 5,
+  )) |> 
+  mutate(is_high_review = review_num >= 4)
+
+```
+
+Explain data cleaning here....
+
+Analysis:
+
+goal = analyze which books are most rpofitable for copmany. What's most profitable: book that was purchased the most? How much money each book generates overall?
+
+The most accurate way to determine the "most profitable" book is to focus on the total revenue it generates, rather than just the number of copies sold. Profitability depends on both sales volume and price, as well as costs and profit margins. A book that sells fewer copies at a higher price may generate more profit than a bestseller with lower margins. Therefore, considering total revenue, costs, and profit margins provides a clearer picture of a book's true profitability.
+
+```{r}
+book_reviews |> 
+  group_by(book) |> 
+  summarise(total_generated = sum(price)) |> 
+  arrange(desc(total_generated))
+```
+
+```{r}
+book_reviews |> 
+  group_by(book) |> 
+  summarise(total_generated = sum(price)) |> 
+  arrange(desc(total_generated)) |> 
+  ggplot() +
+  geom_col(aes(x = reorder(book, total_generated), y = total_generated)) +
+  coord_flip() +
+  theme_bw() +
+  labs(
+    y = "Total Generated (USD)",
+    x = "", 
+    title = "'Secrets of R for Advanced Students' is the \nTop Selling Book for New Programmers\n"
+  )
+```
+
+```{r}
+book_reviews |> 
+  distinct(book, .keep_all = TRUE) |> 
+  select(book, price) |> 
+  arrange(desc(price))
+```
+
+-   Introduction: What motivated our analysis? What kind of data do we have? What is the main question we're trying to answer?
+
+-   Findings: What did we need to do to the data to do our analysis? What things are we calculating to answer our main question?
+
+-   Conclusion: What is the answer to our main question? Was there anything that we feel limits our analysis? What should the reader do with our findings?
+
+-   Is there any relationship between state and the books purchased there? Maybe some states have more interest in some books over others. With this knowledge, we can try to send more of these books to where they are more popular.
+
+<!-- -->
+
+-   We can also expand our analysis by trying to gain insights on reader's sentiment and reception towards books produced by the company. This would require shifting the focus of the data analysis workflow from financial success to paying attention to reader's ratings based on sentiment and reception. Remember that the book ratings can be transformed into an integer scale using scores of 1 - 5 so that further analysis can be carried out on them, such as grouping the dataset by books, calculating the mean review score for each book and then sorting the data in descending order to ascertain the book with the highest mean rating.

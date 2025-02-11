@@ -1,2 +1,3 @@
-# Python-Sandbox
-A repo to store code for misc. projects and other things I am experimenting with in Python.
+# Sandbox
+
+A repository for storing random personal projects I'm working on, along with other things I'm experimenting with.

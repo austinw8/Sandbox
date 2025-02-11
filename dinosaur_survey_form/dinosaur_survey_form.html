@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Dinosaur Survey Form</title>
+    <link rel="stylesheet" href="dinosaur_survey_form.css" />
+  </head>
+  <body>
+    <div>
+    <h1 id="title">Dinosaur Survey Form</h1>
+    <p id="description">Thanks for taking this survey. You're awesome!</p>
+    <form id="survey-form" method = "post">
+      <fieldset>
+        <label for="name" id="name-label">Name: <input id="name" name="name" type="text" placeholder="Your Full Name" required/></label>
+        <label for="email" id="email-label">Email: <input id="email" name="email" type="email" placeholder="Your Email Address" required/></label>
+        <label for="number" id="number-label">Age (optional): <input id="number" name="number" type="number" min="18" max="120" step="1" placeholder="Your Age (In Years)"required/></label>
+      </fieldset>
+      <fieldset>
+        <legend>Do you consider yourself a dinosaur fan?</legend>
+        <label for="yes"><input id="yes" type="radio" name="dinosaur-fan" class="inline" value="1" checked /> Absolutely!</label>
+        <label for="no"><input id="no" type="radio" name="dinosaur-fan" class="inline" value="2" /> Nah...</label>
+      </fieldset>
+      <fieldset>
+        <label for="dropdown">What's Your Favorite Dinosaur?
+          <select id="dropdown" name="dropdown">
+            <option value="">(select one)</option>
+            <option value="1">Brontosaurus</option>
+            <option value="2">Stegasaurus</option>
+            <option value="3">Triceratops</option>
+            <option value="4">Tyrannosaurus Rex</option>
+            <option value="5">Velociraptor</option>
+          </select>
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>Which Jurassic Park movies have you seen?</legend>
+
+          
+          <label for="movie1"><input class="inline" type="checkbox" id="movie1" name="movie" value="1">Jurassic Park</label>
+
+          <label for="movie2"><input class="inline" type="checkbox" id="movie2" name="movie" value="2">The Lost World: Jurassic Park</label>
+
+          <label for="movie3"><input class="inline" type="checkbox" id="movie3" name="movie" value="3">Jurassic Park III</label>
+
+          <label for="movie4"><input class="inline" type="checkbox" id="movie4" name="movie" value="4">Jurassic World</label>
+
+          <label for="movie5"><input class="inline" type="checkbox" id="movie5" name="movie" value="5">Jurassic World: Fallen Kingdom</label>
+
+          <label for="movie6"><input class="inline" type="checkbox" id="movie6" name="movie" value="6">Jurassic World Dominion</label>
+
+      </fieldset>
+      <fieldset>
+        <label for="comments"> Please leave any additional comments below:
+          <textarea id="comments" name="comments" rows="3" cols="30" placeholder="Dinosaurs are the best!"></textarea>
+        </label>
+      </fieldset>
+      <input id="submit" type="submit" value="Submit" />
+  </form>
+  </div>
+</body>
+</html>

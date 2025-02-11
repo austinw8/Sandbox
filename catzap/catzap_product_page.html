@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="catzap_product_page.css">
+    <title>CatZap</title>
+  </head>
+  <body>
+
+    <header id="header">
+      <div class="logo">
+      <img src="https://i.imgur.com/jxy7lKD.jpeg" id="header-img" alt="CatZap Logo">
+      </div>
+      <h1 class="title">CatZap</h1>
+      <nav class="nav-bar" id="nav-bar" role="navigation" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="#features">Features</a></li>
+          <li><a class="nav-link" href="#how-it-works">How It Works</a></li>
+          <li><a class="nav-link" href="#pricing">Pricing</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="features">
+      <h2>Features</h2>
+      <ul>
+        <li>
+          <h3>Smart Laser Play</h3>
+          <p>Automatically detects and responds to your cat’s movements.</p>
+        </li>
+        <li>
+          <h3>Hands-Free Fun</h3>
+          <p>Keeps your cat entertained even when you’re busy.</p>
+        </li>
+        <li>
+          <h3>Rechargeable & Durable</h3>
+          <p>Eco-friendly design built to last.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="how-it-works">
+      <h2>How It Works</h2>
+      <ol>
+        <li>
+          <h3>Turn It On</h3>
+          <p>Press the button to start.</p>
+        </li>
+        <li>
+          <h3>Interactive Play</h3>
+          <p>The laser moves in random patterns to keep your cat engaged.</p>
+        </li>
+        <li>
+          <h3>Auto Shutoff</h3>
+          <p>Turns off after 15 minutes to prevent overstimulation.</p>
+        </li>
+      </ol>
+      <h3 class="video-title">See how much cats love lasers!</h3>
+      <iframe 
+        id="video" 
+        src="https://www.youtube.com/embed/myx6h6iASiQ"
+        title="Cats playing with lasers - Youtube"
+        frameborder="0"
+        allowfullscreen>
+        </iframe>
+      </section>
+
+    <section id="pricing">
+      <h2>Pricing</h2>
+      <h3>Standard - $49.99</h3>
+      <p>Includes the CatZap and USB charger.</p>
+      <h3>Deluxe - $69.99</h3>
+      <p>Adds a remote control and extended warranty.</p>
+    </section>
+
+    <section class="contact-form">
+    <form id="form" action="https://www.freecodecamp.com/email-submit">
+    <p>Order now to keep your cat happy and active!</p>
+    <label for="name">Full Name:</label>
+    <input id="name" placeholder="Mr. Snuggles" type="text" name="name" required>
+    <label for="email">Email Address: </label>
+    <input id="email" placeholder="catlover@gmail.com" type="email" name="email" required>
+    <input id="submit" type="submit" value="Order Now!">
+    </form>
+    </section>
+
+<footer class="footer">
+  <p>&copy; 2025 CatZap. All rights reserved.</p>
+  <p><a href="#header">Back to top</a></p>
+</footer>
+
+  </body>
+</html>

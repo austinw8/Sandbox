@@ -1,0 +1,90 @@
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-image: url("https://cdn.dribbble.com/users/2415822/screenshots/4959946/media/7a2f9cc6ca03cfd00ac67656b9c2ad16.png");
+    background-size: cover;
+    background-position: center;
+    color: #000000;
+    font-family: Raleway;
+    font-size: 16px;
+  }
+  
+  div {
+    background-color: #C4BFBC;
+    margin: 5rem 10rem;
+    padding-top: 15px;
+  }
+  
+  h1, p {
+    margin: 1em auto;
+    text-align: center;
+  }
+  
+  form {
+    width: 60vw;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding-bottom: 2em;
+    background-color: #C4BFBC;
+  }
+  
+  fieldset {
+    display: block;
+    border: none;
+    padding: 2rem 0;
+    border-bottom: 2px solid #ffffff
+  }
+  
+  fieldset:last-of-type {
+    border-bottom: none;
+  }
+  
+  legend {
+    margin-bottom: -1rem;
+  }
+  
+  fieldset + fieldset {
+    margin-top: 1.5rem;
+  }
+  
+  label {
+    display: block;
+    margin: 0.5rem 0;
+  }
+  
+  input,
+  textarea,
+  select {
+    margin: 10px 0 0 0;
+    width: 100%;
+    min-height: 2em;
+  }
+  
+  input, textarea {
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    color: #000000;
+  }
+  
+  .inline {
+    width: unset;
+    margin: 0 0.5em 0 0;
+    vertical-align: middle;
+  }
+  
+  input[type="submit"] {
+    display: block;
+    width: 60%;
+    margin: 1em auto;
+    height: 2em;
+    font-size: 1.1rem;
+    background-color: #ffffff;
+    border-color: #000000;
+    min-width: 300px;
+  }
+  
+  .input-checkbox {
+    display: inline;
+  }

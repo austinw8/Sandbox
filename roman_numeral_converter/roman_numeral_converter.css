@@ -5,31 +5,34 @@
 }
 
 body {
-    font-family: Arial, serif;
-    background-color: #2D343A;
+    font-family: 'Cinzel', serif;
+    background-color: #f5f1e0;
     color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     flex-direction: column;
+    background-image: url('https://t3.ftcdn.net/jpg/03/66/10/14/360_F_366101427_8yazUJK82fDrLi4YtpnQO3DJ4dTygxoe.jpg');
+    background-size: cover;
 }
 
 .container {
-    background-color: white;
+    background-color: #f5f1e0;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 500px;
+    border: 2px solid #6c4f3d;
 }
 
 header h1 {
-    font-family: 'Cinzel', serif;
     text-align: center;
     margin-bottom: 20px;
     font-size: 40px;
-    color: white;
+    color: #4a3c31;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .form-container {
@@ -40,37 +43,43 @@ header h1 {
 }
 
 label {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 8px;
+    color: #6c4f3d;
+    font-weight: bold;
 }
 
 input {
     width: 80%;
-    padding: 8px;
+    padding: 10px;
     margin-bottom: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 2px solid #6c4f3d;
     border-radius: 4px;
+    background-color: #ffffff;
+    color: #333
 }
 
 button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #007BFF;
+    background-color: #9F6B29;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #f1c27d;
 }
 
 .result-container {
     margin-top: 30px;
     padding: 20px;
-    background-color: #E9EDF2;
+    background-color: #ffffff;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -79,17 +88,20 @@ button:hover {
     align-items: center;
     width: 75%;
     margin: 0 auto;
+    border: 2px solid #6c4f3d;
 }
 
-#romanResult {
-    font-size: 24px;
+#output {
+    font-size: 32px;
     font-weight: bold;
-    color: #007BFF;
+    color: #6c4f3d;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 footer {
     text-align: center;
     margin-top: 20px;
-    font-size: 14px;
-    color: #777;
+    font-size: 16px;
+    color: black;
+    font-family: 'Georgia', serif;
 }

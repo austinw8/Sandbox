@@ -2,7 +2,7 @@ function checkNumber() {
     const numInput = document.getElementById("user-input").value;
     const result = document.getElementById("result-div");
 
-    const regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s.-]?\d{3}[\s.-]?\d{4}$/;
+    const regex = /^(\+?\s?1\s?)?(\(\d{3}\)|\d{3})[\s.-]?\d{3}[\s.-]?\d{4}$/;
 
     if (!numInput) {
         result.textContent = "Please provide a phone number";

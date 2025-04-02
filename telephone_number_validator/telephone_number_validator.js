@@ -11,8 +11,14 @@ function checkNumber() {
         result.textContent = `Valid US Number: ${numInput}`;
         result.style.color = "green";
     } else {
-        result.textContent = " Invalid Phone Number";
+        result.textContent = `Invalid US Number: ${numInput}`;
         result.style.color = "red";
+    }
+}
+
+function checkEnter(event) {
+    if (event.key === "Enter") {
+        checkNumber();
     }
 }
 
@@ -20,6 +26,3 @@ function clearInput() {
     document.getElementById("user-input").value = "";
     document.getElementById("result-div").textContent = "";
 }
-
-// ❌
-// ✅

@@ -54,3 +54,15 @@ p {
     font-size: 16px;
     font-weight: bold;
 }
+
+footer p {
+    font-size: 8px;
+    font-weight: normal;
+    padding-top: 120px;
+}
+
+footer p {
+    font-weight: normal;
+    font-size: 12px;
+    color: black;
+}

@@ -7,11 +7,10 @@ downloads_path = Path("C:/Users/austi/Downloads")
 
 # define folder categories
 categories = {
-    "web files": [".html", ".htm"],
     "text": [".txt", ".docx", ".doc", ".rtf", ".odt"],
-    "pdf": [".pdf"],
+    "pdf": [".pdf", ".html", ".htm"],
     "csv": [".csv", ".xlsx", ".xls"],
-    "audio": [".mp3", ".wav", ".aac", ".flac", ".ogg"],
+    "audio": [".mp3", ".wav", ".aac", ".flac", ".ogg", ".aup"],
     "video": [".mp4", ".avi", ".mkv", ".mov", ".wmv"],
     "images": [".png", ".jpg", ".jpeg", ".gif", ".bmp", ".tiff", ".webp"],
 }

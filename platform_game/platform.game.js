@@ -26,6 +26,7 @@ class Player {
     this.width = proportionalSize(40);
     this.height = proportionalSize(40);
     this.isOnGround = false;
+    this.jumpsRemaining = 2;
   }
   draw() {
     ctx.fillStyle = "#99c9ff";
@@ -43,6 +44,7 @@ class Player {
     } else {
       this.velocity.y = 0;
       this.isOnGround = true;
+      this.jumpsRemaining = 2;
     }
 
     if (this.position.x < this.width) {
@@ -177,6 +179,7 @@ const animate = () => {
     if (collisionDetectionRules.every((rule) => rule)) {
       player.velocity.y = 0;
       player.isOnGround = true;
+      player.jumpsRemaining = 2;
       return;
     }
 
@@ -230,7 +233,8 @@ const keys = {
   },
   leftKey: {
     pressed: false
-  }
+  },
+  jumpKeyPressed: false
 };
 
 const movePlayer = (key, xVelocity, isPressed) => {
@@ -251,9 +255,11 @@ const movePlayer = (key, xVelocity, isPressed) => {
     case "ArrowUp":
     case " ":
     case "Spacebar":
-      if (player.isOnGround) {
-        player.velocity.y -= 14;
+      if (!keys.jumpKeyPressed && player.jumpsRemaining > 0) {
+        player.velocity.y = -14;
+        player.jumpsRemaining--;
         player.isOnGround = false;
+        keys.jumpKeyPressed = true;
       }
       break;
     case "ArrowRight":
@@ -287,4 +293,7 @@ window.addEventListener("keydown", ({ key }) => {
 
 window.addEventListener("keyup", ({ key }) => {
   movePlayer(key, 0, false);
+  if (key === "ArrowUp" || key === " " || key === "Spacebar") {
+    keys.jumpKeyPressed = false;
+  }
 });

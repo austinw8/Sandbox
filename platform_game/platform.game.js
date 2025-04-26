@@ -256,7 +256,7 @@ const movePlayer = (key, xVelocity, isPressed) => {
     case " ":
     case "Spacebar":
       if (!keys.jumpKeyPressed && player.jumpsRemaining > 0) {
-        player.velocity.y = -14;
+        player.velocity.y = player.jumpsRemaining === 1 ? -18 : -15;
         player.jumpsRemaining--;
         player.isOnGround = false;
         keys.jumpKeyPressed = true;

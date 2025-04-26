@@ -6,7 +6,7 @@ const checkpointMessage = document.querySelector(".checkpoint-screen > p");
 const ctx = canvas.getContext("2d");
 canvas.width = innerWidth;
 canvas.height = innerHeight;
-const gravity = 0.5;
+const gravity = 1.2;
 let isCheckpointCollisionDetectionActive = true;
 
 const proportionalSize = (size) => {
@@ -25,6 +25,7 @@ class Player {
     };
     this.width = proportionalSize(40);
     this.height = proportionalSize(40);
+    this.isOnGround = false;
   }
   draw() {
     ctx.fillStyle = "#99c9ff";
@@ -36,14 +37,12 @@ class Player {
     this.position.x += this.velocity.x;
     this.position.y += this.velocity.y;
 
-    if (this.position.y + this.height + this.velocity.y <= canvas.height) {
-      if (this.position.y < 0) {
-        this.position.y = 0;
-        this.velocity.y = gravity;
-      }
+    if (this.position.y + this.height + this.velocity.y < canvas.height) {
       this.velocity.y += gravity;
+      this.isOnGround = false;
     } else {
       this.velocity.y = 0;
+      this.isOnGround = true;
     }
 
     if (this.position.x < this.width) {
@@ -177,6 +176,7 @@ const animate = () => {
 
     if (collisionDetectionRules.every((rule) => rule)) {
       player.velocity.y = 0;
+      player.isOnGround = true;
       return;
     }
 
@@ -251,7 +251,10 @@ const movePlayer = (key, xVelocity, isPressed) => {
     case "ArrowUp":
     case " ":
     case "Spacebar":
-      player.velocity.y -= 8;
+      if (player.isOnGround) {
+        player.velocity.y -= 14;
+        player.isOnGround = false;
+      }
       break;
     case "ArrowRight":
       keys.rightKey.pressed = isPressed;

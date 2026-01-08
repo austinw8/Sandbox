@@ -1,0 +1,57 @@
+#playing-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(18, 88, 66, 1);
+    width: 100vw;
+    height: 100vh;
+;
+}
+
+.card {
+    width: 180px;
+    height: 260px;
+    background: white;
+    border-radius: 12px;;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.left,
+.right {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.left {
+    align-self: flex-start;
+}
+
+.middle {
+    align-self: center; 
+    font-size: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+}
+
+.right {
+    align-self: flex-end; 
+    transform: rotate(180deg);
+}
+
+.heart {
+    color: red;
+}

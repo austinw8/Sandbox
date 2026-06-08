@@ -1,0 +1,29 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: 'Science Gothic', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.timezone {
+    font-size: 1em;
+    margin-bottom: 0.5rem;
+    color: #868080;
+}
+
+.time {
+    font-size: 3em;
+}
+
+.date {
+    font-size: 1em;
+    margin-top: 1rem;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "timezone-checkpoint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "date-fns": "^4.4.0"
+  },
+  "devDependencies": {
+    "vite": "^8.0.16"
+  }
+}

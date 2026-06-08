@@ -1,4 +1,5 @@
-/data
-/letsplot_viz_files
-/sandbox.py
-/tutorials
+data
+letsplot_viz_files
+sandbox.py
+tutorials
+node_modules

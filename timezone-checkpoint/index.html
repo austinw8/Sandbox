@@ -3,20 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Web Page</title>
+    <title>Timezone</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <div class="container">
-      <div class="timezone" id="timezone">Timezone</div>
+      <div class="timezone-row">
+        <div class="timezone" id="timezone"></div>
+        <button
+          class="edit-btn"
+          data-micromodal-trigger="modal-timezone"
+          aria-label="Edit timezone"
+          id="edit-btn"
+        ><i data-lucide="pencil"></i></button>
+      </div>
       <div class="time" id="time"></div>
       <div class="date" id="date"></div>
+    </div>
+    <div id="modal-timezone" aria-hidden="true" class="modal">
+      <div tabindex="-1" data-micromodal-close class="modal__overlay">
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-timezone-title"
+          class="modal__container"
+        >
+          <header class="modal__header">
+            <h2 id="modal-timezone-title">Select Timezone</h2>
+            <button
+              aria-label="Close modal"
+              data-micromodal-close
+              class="modal__close"
+              id="modal-close-btn"
+            ><i data-lucide="x"></i></button>
+          </header>
+          <div id="modal-timezone-content" class="modal__content">
+            <input
+              type="text"
+              id="timezone-search"
+              placeholder="Search timezones..."
+              autocomplete="off"
+            />
+            <select id="timezone-select" size="8"></select>
+          </div>
+        </div>
+      </div>
     </div>
     <script type="module" src="main.js"></script>
   </body>

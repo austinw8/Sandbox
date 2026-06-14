@@ -1,10 +1,17 @@
+html, body {
+    font-family: 'Comic Relief', sans-serif;
+}
+
+* {
+    font-family: inherit;
+}
+
 body {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0;
-    font-family: 'Science Gothic', sans-serif;
 }
 
 .container {
@@ -13,10 +20,113 @@ body {
     align-items: flex-end;
 }
 
-.timezone {
-    font-size: 1em;
+.timezone-row {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
     margin-bottom: 0.5rem;
+}
+
+.timezone {
     color: #868080;
+}
+
+.edit-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #868080;
+    display: flex;
+    align-items: center;
+    opacity: 0.6;
+}
+
+.edit-btn:hover {
+    opacity: 1;
+}
+
+.edit-btn svg {
+    width: 13px;
+    height: 13px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+}
+
+.modal.is-open {
+    display: block;
+}
+
+.modal__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.modal__container {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 340px;
+    max-width: 90vw;
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.modal__header h2 {
+    margin: 0;
+}
+
+.modal__close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #868080;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.modal__close:hover {
+    color: #333;
+}
+
+.modal__close svg {
+    width: 18px;
+    height: 18px;
+}
+
+#timezone-search {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    box-sizing: border-box;
+    outline: none;
+}
+
+#timezone-search:focus {
+    border-color: #888;
+}
+
+#timezone-select {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
 }
 
 .time {
@@ -24,6 +134,5 @@ body {
 }
 
 .date {
-    font-size: 1em;
     margin-top: 1rem;
 }
